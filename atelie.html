@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloomist - Ateliê Digital</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo site de pintura.jpg" alt="Logo Bloomist">
+      <h1>Bloomist</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="atelie.html" class="active">Ateliê Digital</a>
+      <a href="mural.html">Mural de Artes</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="sobre.html">Sobre Nós</a>
+    </nav>
+  </header>
+
+  <!-- Área de Trabalho do Ateliê -->
+  <main class="main-card-container">
+    <div class="atelie-header" style="text-align: center; margin-bottom: 1.5rem;">
+      <h2>Ateliê de Pintura</h2>
+      <p>Escolha uma cor e clique no desenho para pintar! Assine e publique no Mural.</p>
+    </div>
+
+    <div class="painel-pintura">
+      
+      <!-- Canvas + Controles de Zoom -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <div class="controles-zoom" style="display: flex; gap: 8px;">
+          <button id="btn-zoom-in" class="btn-acao secundario" style="padding: 4px 12px;">🔍 + Zoom</button>
+          <button id="btn-zoom-out" class="btn-acao secundario" style="padding: 4px 12px;">🔍 - Zoom</button>
+          <button id="btn-zoom-reset" class="btn-acao secundario" style="padding: 4px 12px;">🔄 100%</button>
+        </div>
+        
+        <div class="canvas-wrapper" style="overflow: auto; max-width: 500px; max-height: 500px; border-radius: 12px;">
+          <canvas id="coloring-canvas" width="500" height="500" style="transition: transform 0.1s ease; transform-origin: top left; cursor: crosshair;"></canvas>
+        </div>
+      </div>
+
+      <!-- Barra Lateral de Ferramentas -->
+      <aside class="ferramentas-painel">
+        <div>
+          <h3 class="secao-titulo">Ferramentas</h3>
+          <div class="acoes-botoes">
+            <button id="btn-bucket" class="btn-acao">🪣 Balde de Tinta</button>
+            <button id="btn-brush" class="btn-acao secundario">🖌️ Pincel</button>
+            <button id="btn-undo" class="btn-acao secundario">↩ Desfazer</button>
+            <button id="btn-clear" class="btn-acao secundario">🗑️ Limpar</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="secao-titulo">Paleta Botânica</h3>
+          <div class="paleta-cores">
+            <button class="cor-btn" style="background-color: #FFFFFF; border: 1px solid #A35C61;" data-color="#FFFFFF" title="Branco"></button>
+            <button class="cor-btn" style="background-color: #F3D7D7;" data-color="#F3D7D7" title="Blossom Pink"></button>
+            <button class="cor-btn ativa" style="background-color: #C87D82;" data-color="#C87D82" title="Soft Peony"></button>
+            <button class="cor-btn" style="background-color: #A35C61;" data-color="#A35C61" title="Antique Rose"></button>
+            <button class="cor-btn" style="background-color: #8A9A86;" data-color="#8A9A86" title="Dried Thyme"></button>
+            <button class="cor-btn" style="background-color: #493C35;" data-color="#493C35" title="Ink Brown"></button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="secao-titulo">Cor Personalizada</h3>
+          <input type="color" id="seletor-cor" value="#C87D82" style="width: 100%; height: 40px; border: none; cursor: pointer; border-radius: 8px;">
+        </div>
+
+        <!-- MURAL & ASSINATURA -->
+        <div>
+          <h3 class="secao-titulo">Sua Assinatura</h3>
+          <input type="text" id="nome-artista" placeholder="Digite seu nome..." style="width: 100%; padding: 8px 12px; border: 1px solid #C87D82; border-radius: 8px; font-family: inherit; margin-bottom: 10px;">
+          <button id="btn-mural" class="btn-acao" style="width: 100%; margin-bottom: 8px;">🎨 Publicar no Mural</button>
+          <button id="btn-download" class="btn-acao secundario" style="width: 100%;">📥 Baixar Arquivo</button>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 1.5rem; color: #493C35;">
+    <p><small>Mundo SENAI • Plataforma de Colorir</small></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

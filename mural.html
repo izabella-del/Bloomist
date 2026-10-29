@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloomist - Mural de Artes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .mural-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .mural-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(73, 60, 53, 0.08);
+      border: 1px solid #F3D7D7;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .mural-card:hover {
+      transform: translateY(-4px);
+    }
+    .mural-card img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    .mural-card p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #493C35;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo site de pintura.jpg" alt="Logo Bloomist">
+      <h1>Bloomist</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="atelie.html">Ateliê Digital</a>
+      <a href="mural.html" class="active">Mural de Artes</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="sobre.html">Sobre Nós</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-card-container">
+    <div style="text-align: center;">
+      <h2>🖼️ Mural da Feira • Mundo SENAI</h2>
+      <p style="color: #A35C61; margin-top: 0.5rem;">Confira os desenhos pintados e assinados pelos visitantes!</p>
+    </div>
+
+    <!-- Grid onde as imagens do localStorage serão carregadas -->
+    <div id="mural-grid" class="mural-grid">
+      <!-- As artes enviadas do Ateliê aparecerão aqui -->
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 1.5rem; color: #493C35;">
+    <p><small>Mundo SENAI • Plataforma de Colorir</small></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

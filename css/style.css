@@ -1,0 +1,375 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÃO GLOBAL (Paleta Bloomist)
+   ========================================================================== */
+:root {
+  --cream: #F8EDE2;
+  --blossom-pink: #F3D7D7;
+  --soft-peony: #C87D82;
+  --antique-rose: #A35C61;
+  --dried-thyme: #8A9A86;
+  --ink-brown: #493C35;
+  --white: #ffffff;
+  --border-color: #D3C3B9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fundo com o Wallpaper Floral cobrindo a tela toda */
+body {
+  background-image: url('../img/fundo-floral.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--ink-brown);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (Header com Degradê)
+   ========================================================================== */
+.header {
+  /* Degradê do branco (esquerda) para o Cream (direita) */
+  background: linear-gradient(to right, #ffffff, var(--cream));
+  padding: 1.2rem 2.5rem;
+  border-bottom: 2px solid #EBE2DA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(73, 60, 53, 0.05);
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
+  vertical-align: middle;
+  /* Fundo branco no logo para integrar suavemente */
+  background-color: var(--white); 
+  border-radius: 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink-brown);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--soft-peony);
+}
+
+/* ==========================================================================
+   3. ESTRUTURA DOS CARDS PRINCIPAIS (Bordas Arredondadas)
+   ========================================================================== */
+.main-card-container,
+.hero,
+.galeria-container,
+.painel-pintura {
+  background-color: rgba(255, 255, 255, 0.95); /* Fundo claro flutuante */
+  border-radius: 28px; /* Cantos bem arredondados */
+  padding: 2.5rem;
+  box-shadow: 0 12px 32px rgba(73, 60, 53, 0.1);
+  border: 1px solid #EBE2DA;
+  max-width: 1150px;
+  margin: 2.5rem auto;
+}
+
+/* ==========================================================================
+   4. PÁGINA INITIAL (Home)
+   ========================================================================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin: 0; /* Usa o espaçamento da caixa pai */
+}
+
+.hero-texto {
+  flex: 1;
+}
+
+.hero-texto h2 {
+  color: var(--ink-brown);
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.hero-texto p {
+  color: #8C7A6B;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-principal {
+  background-color: var(--soft-peony);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-principal:hover {
+  background-color: var(--antique-rose);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background-color: var(--cream);
+  color: var(--ink-brown);
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background-color: var(--blossom-pink);
+}
+
+/* Moldura de Destaque na Home - Fundo Branco */
+.hero-imagem {
+  flex: 1;
+  max-width: 420px;
+  height: 300px;
+  background-color: var(--white); /* Deixado totalmente em branco */
+  border-radius: 22px;
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   5. PÁGINA GALERIA
+   ========================================================================== */
+.galeria-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.galeria-header h2 {
+  font-size: 2rem;
+  color: var(--ink-brown);
+}
+
+.galeria-header p {
+  color: #8C7A6B;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Individual de cada Desenho */
+.card-desenho {
+  background-color: var(--white);
+  border-radius: 24px; /* Cantos arredondados */
+  padding: 1.2rem;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-desenho:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(73, 60, 53, 0.12);
+}
+
+/* Moldura da Imagem na Galeria - Fundo Branco */
+.img-box {
+  width: 100%;
+  height: 220px;
+  background-color: var(--white); /* Deixado totalmente em branco */
+  border-radius: 18px;
+  border: 1px solid #EBE2DA;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Preserva o desenho sem cortar */
+}
+
+.card-desenho h3 {
+  color: var(--ink-brown);
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-desenho p {
+  color: #8C7A6B;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.btn-colorir {
+  background-color: var(--soft-peony);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.75rem 1.4rem;
+  border-radius: 25px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-colorir:hover {
+  background-color: var(--antique-rose);
+}
+
+/* ==========================================================================
+   6. PÁGINA ATELIÊ (Área de Pintura)
+   ========================================================================== */
+.painel-pintura {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Moldura do Desenho no Ateliê - Fundo Branco */
+.canvas-wrapper {
+  flex: 1;
+  min-width: 320px;
+  max-width: 650px;
+  min-height: 450px;
+  background-color: var(--white); /* Deixado totalmente em branco */
+  border-radius: 20px;
+  border: 2px dashed var(--border-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas-wrapper canvas,
+.canvas-wrapper img,
+.canvas-wrapper svg {
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+  display: block;
+}
+
+/* Painel Lateral de Ferramentas e Cores */
+.ferramentas-painel {
+  width: 280px;
+  background-color: var(--cream);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid #EBE2DA;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.secao-titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink-brown);
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid var(--blossom-pink);
+  padding-bottom: 0.3rem;
+}
+
+/* Botões da Paleta de Cores */
+.paleta-cores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.cor-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cor-btn:hover {
+  transform: scale(1.15);
+}
+
+.cor-btn.ativa {
+  border-color: var(--ink-brown);
+  transform: scale(1.15);
+}
+
+/* Botões de Ação do Ateliê */
+.acoes-botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.btn-acao {
+  background-color: var(--soft-peony);
+  color: var(--white);
+  border: none;
+  padding: 0.85rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-acao:hover {
+  background-color: var(--antique-rose);
+}
+
+.btn-acao.secundario {
+  background-color: transparent;
+  color: var(--ink-brown);
+  border: 2px solid var(--border-color);
+}
+
+.btn-acao.secundario:hover {
+  background-color: var(--blossom-pink);
+}
